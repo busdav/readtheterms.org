@@ -4,19 +4,25 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "client": "cd client && yarn start",
+    "server": "nodemon ./bin/www",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^8.1.0",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "mongoose": "^5.7.1",
     "morgan": "~1.9.1"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
+    "concurrently": "^4.0.1",
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
