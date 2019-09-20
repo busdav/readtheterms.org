@@ -36,9 +36,6 @@
     "extends": [
       "react-app",
       "plugin:prettier/recommended"
-    ],
-    "plugins": [
-      "prettier"
     ]
   },
   "prettier": {
