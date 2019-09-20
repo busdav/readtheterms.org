@@ -36,7 +36,14 @@
     "extends": [
       "react-app",
       "plugin:prettier/recommended"
-    ]
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
   },
   "prettier": {
     "printWidth": 90,
@@ -55,6 +62,14 @@
       "git add"
     ],
     "*.+(json|css|md)": [
+      "prettier --write",
+      "git add"
+    ],
+    "../src/**/*.+(js|jsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "../src/**/*.+(json|css|md)": [
       "prettier --write",
       "git add"
     ]

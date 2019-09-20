@@ -22,5 +22,31 @@
   },
   "devDependencies": {
     "concurrently": "^4.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "no-unused-vars": [
+        1,
+        {
+          "ignoreSiblings": true,
+          "argsIgnorePattern": "res|next|^err"
+        }
+      ]
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
   }
 }
