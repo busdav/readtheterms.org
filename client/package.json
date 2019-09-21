@@ -28,8 +28,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "plugin:prettier/recommended",
-      "prettier/react"
+      "plugin:prettier/recommended"
     ]
   },
   "husky": {
