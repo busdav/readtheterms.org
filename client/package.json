@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
+    "lint": "eslint \"../**/*.+(js|jsx)\" --ignore-pattern node_modules/",
     "lint:fix": "eslint . --fix"
   },
   "browserslist": {
@@ -52,19 +52,11 @@
     }
   },
   "lint-staged": {
-    "*.+(js|jsx)": [
+    "../**/*.+(js|jsx)": [
       "eslint --fix",
       "git add"
     ],
-    "*.+(json|css|md)": [
-      "prettier --write",
-      "git add"
-    ],
-    "../src/**/*.+(js|jsx)": [
-      "eslint --fix",
-      "git add"
-    ],
-    "../src/**/*.+(json|css|md)": [
+    "../**/*.+(json|css|md)": [
       "prettier --write",
       "git add"
     ]

@@ -6,9 +6,7 @@
     "start": "node ./bin/www",
     "client": "cd client && yarn start",
     "server": "nodemon ./bin/www",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
