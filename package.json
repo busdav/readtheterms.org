@@ -6,7 +6,9 @@
     "start": "node ./bin/www",
     "client": "cd client && yarn start",
     "server": "nodemon ./bin/www",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "lint": "cd client && yarn eslint \"../**/*.+(js|jsx)\" --ignore-pattern node_modules/",
+    "lint:fix": "cd client && yarn eslint \"../**/*.+(js|jsx)\" --ignore-pattern node_modules/ --fix"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -23,12 +25,15 @@
   },
   "eslintConfig": {
     "extends": [
-      "eslint:recommended",
       "plugin:prettier/recommended"
     ],
     "env": {
       "browser": true,
       "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
     },
     "rules": {
       "no-unused-vars": [
@@ -38,13 +43,6 @@
           "argsIgnorePattern": "res|next|^err"
         }
       ]
-    },
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
     }
   }
 }

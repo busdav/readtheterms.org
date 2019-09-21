@@ -11,9 +11,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint \"../**/*.+(js|jsx)\" --ignore-pattern node_modules/",
-    "lint:fix": "eslint \"../**/*.+(js|jsx)\" --ignore-pattern node_modules/ --fix"
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
@@ -30,21 +28,9 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "plugin:prettier/recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    }
-  },
-  "prettier": {
-    "printWidth": 90,
-    "bracketSpacing": false,
-    "trailingComma": "es5",
-    "singleQuote": true
+      "plugin:prettier/recommended",
+      "prettier/react"
+    ]
   },
   "husky": {
     "hooks": {
