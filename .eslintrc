@@ -41,7 +41,7 @@
     "prefer-const": [
       "error",
       {
-        "destructuring": "all",
+        "destructuring": "all"
       }
     ],
     "arrow-body-style": [
