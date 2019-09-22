@@ -23,10 +23,21 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.0.1",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-flowtype": "3.13.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "prettier": "^1.18.2"
   },
   "eslintConfig": {
     "extends": [
+      "airbnb",
       "plugin:prettier/recommended"
     ],
     "env": {
