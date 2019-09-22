@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const createError = require("http-errors");
 
 module.exports = {

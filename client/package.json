@@ -33,13 +33,6 @@
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "airbnb",
-      "plugin:prettier/recommended"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

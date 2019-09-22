@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
