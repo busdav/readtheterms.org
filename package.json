@@ -8,7 +8,7 @@
     "server": "nodemon ./bin/www",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "lint": "cd client && yarn eslint \"../**/*.+(js|jsx)\" --ignore-pattern node_modules/",
-          "lint:fix": "cd client && yarn eslint \"../**/*.+(js|jsx)\" --ignore-pattern node_modules/ --fix"
+    "lint:fix": "cd client && yarn eslint \"../**/*.+(js|jsx)\" --ignore-pattern node_modules/ --fix"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
