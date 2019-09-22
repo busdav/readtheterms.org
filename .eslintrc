@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "parserOptions": {
     "ecmaVersion": 2018,
     // Can I remove these now?
@@ -21,10 +18,7 @@
     "no-debugger": 0,
     "no-alert": 0,
     "no-await-in-loop": 0,
-    "no-return-assign": [
-      "error",
-      "except-parens"
-    ],
+    "no-return-assign": ["error", "except-parens"],
     "no-restricted-syntax": [
       2,
       "ForInStatement",
@@ -44,10 +38,7 @@
         "destructuring": "all"
       }
     ],
-    "arrow-body-style": [
-      2,
-      "as-needed"
-    ],
+    "arrow-body-style": [2, "as-needed"],
     "no-unused-expressions": [
       2,
       {
@@ -75,29 +66,18 @@
       2,
       {
         "hoist": "all",
-        "allow": [
-          "resolve",
-          "reject",
-          "done",
-          "next",
-          "err",
-          "error"
-        ]
+        "allow": ["resolve", "reject", "done", "next", "err", "error"]
       }
     ],
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": [
       "warn",
       {
-        "aspects": [
-          "invalidHref"
-        ]
+        "aspects": ["invalidHref"]
       }
     ],
     "react-hooks/rules-of-hooks": "off",
     "react-hooks/exhaustive-deps": "off"
   },
-  "plugins": [
-    "html"
-  ]
+  "plugins": ["html"]
 }
