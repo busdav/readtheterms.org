@@ -55,7 +55,7 @@
     }
   },
   "lint-staged": {
-    "../**/*.+(js|jsx)": [
+    "src/some.js": [
       "lint-cd-for-lint-staged",
       "git add"
     ],
