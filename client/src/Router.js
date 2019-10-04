@@ -7,9 +7,9 @@ import Login from "./components/Login";
 
 const Router = props => (
   <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/secret" component={withAuth(Secret)} />
-    <Route path="/login" component={Login} />
+    <Route path="/app" exact component={Home} />
+    <Route path="/app/secret" component={withAuth(Secret)} />
+    <Route path="/app/login" component={Login} />
   </Switch>
 );
 

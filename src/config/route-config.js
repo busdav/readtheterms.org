@@ -1,4 +1,5 @@
 /* eslint-disable global-require */
+const path = require("path");
 const createError = require("http-errors");
 
 module.exports = {
@@ -10,6 +11,13 @@ module.exports = {
     app.use(indexRouter);
     app.use(usersRouter);
     app.use(secretsRouter);
+
+    // Handle React routing, return all requests under /app to React app
+    app.use(["/app", "/app/*"], function(req, res, next) {
+      res.sendFile(
+        path.join(__dirname, "..", "..", "client/build", "index.html")
+      );
+    });
 
     // catch 404 and forward to error handler
     app.use(function(req, res, next) {

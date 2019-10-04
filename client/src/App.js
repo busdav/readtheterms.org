@@ -8,13 +8,13 @@ class App extends Component {
       <div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/app">Home</Link>
           </li>
           <li>
-            <Link to="/secret">Secret</Link>
+            <Link to="/app/secret">Secret</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/app/login">Login</Link>
           </li>
         </ul>
 

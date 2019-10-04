@@ -20,7 +20,7 @@ export default class Login extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    fetch("/api/authenticate", {
+    fetch("/authenticate", {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: {
@@ -29,7 +29,7 @@ export default class Login extends Component {
     })
       .then(res => {
         if (res.status === 200) {
-          this.props.history.push("/");
+          this.props.history.push("/app");
         } else {
           const error = new Error(res.error);
           throw error;

@@ -12,7 +12,7 @@ router.get("/users", function(req, res, next) {
 });
 
 // POST route to register a user
-router.post("/api/register", function(req, res) {
+router.post("/register", function(req, res) {
   const { email, password } = req.body;
   const user = new User({ email, password });
   user.save(function(err) {
@@ -24,7 +24,7 @@ router.post("/api/register", function(req, res) {
   });
 });
 
-router.post("/api/authenticate", function(req, res) {
+router.post("/authenticate", function(req, res) {
   const { email, password } = req.body;
   User.findOne({ email }, function(err, user) {
     if (err) {
