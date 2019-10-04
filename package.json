@@ -7,18 +7,21 @@
     "client": "cd client && yarn start",
     "server": "nodemon ./bin/www",
     "dev": "concurrently --kill-others-on-fail 'yarn server' 'yarn client'",
+    "test": "jest",
     "lint": "cd client && yarn eslint '../**/*.+(js|jsx)' --ignore-pattern node_modules/",
     "lint:fix": "cd client && yarn eslint '../**/*.+(js|jsx)' --ignore-pattern node_modules/ --fix",
     "format": "cd client && yarn prettier './**/*.+(json|css|md)' '../src/**/*.+(json|css|md)' '../public/**/*.+(json|css|md)' '../*.+(json|css|md)' -c",
     "format:fix": "cd client && yarn prettier './**/*.+(json|css|md)' '../src/**/*.+(json|css|md)' '../public/**/*.+(json|css|md)' '../*.+(json|css|md)' --write"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.1.0",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.1",
     "morgan": "~1.9.1"
   },
