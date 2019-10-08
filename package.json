@@ -2,6 +2,11 @@
   "name": "backend",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "12.10.0",
+    "npm": "6.11.3",
+    "yarn": "1.17.3"
+  },
   "scripts": {
     "start": "node ./bin/www",
     "client": "cd client && yarn start",
@@ -12,7 +17,7 @@
     "lint:fix": "cd client && yarn eslint '../**/*.+(js|jsx)' --ignore-pattern node_modules/ --fix",
     "format": "cd client && yarn prettier './**/*.+(json|css|md)' '../src/**/*.+(json|css|md)' '../public/**/*.+(json|css|md)' '../*.+(json|css|md)' -c",
     "format:fix": "cd client && yarn prettier './**/*.+(json|css|md)' '../src/**/*.+(json|css|md)' '../public/**/*.+(json|css|md)' '../*.+(json|css|md)' --write",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
