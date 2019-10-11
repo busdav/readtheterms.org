@@ -10,7 +10,7 @@ export default class Secret extends Component {
   }
 
   componentDidMount() {
-    fetch("/secret")
+    fetch("/api/secret")
       .then(res => res.text())
       .then(res => this.setState({ message: res }));
   }

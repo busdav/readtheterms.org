@@ -2,13 +2,9 @@ const express = require("express");
 
 const router = express.Router();
 
-/* GET home page - is being overriden by React App stubs for some reason. */
+// GET home page
 router.get("/", function(req, res, next) {
   res.render("index", { title: "Express" });
-});
-
-router.get("/home", function(req, res) {
-  res.send("Welcome!");
 });
 
 module.exports = router;

@@ -1,18 +1,18 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const User = require("../db/models/User");
 const withAuth = require("../auth/middleware");
+const User = require("../db/models/User");
 
 const router = express.Router();
 const secret = "mysecretsshhh";
 
-/* GET users listing. */
-router.get("/users", function(req, res, next) {
-  res.send("respond with a resource");
+// GET protected 'secret' information
+router.get("/api/secret", withAuth, function(req, res) {
+  res.send("The password is potato");
 });
 
 // POST route to register a user
-router.post("/register", function(req, res) {
+router.post("/api/register", function(req, res) {
   const { email, password } = req.body;
   const user = new User({ email, password });
   user.save(function(err) {
@@ -24,7 +24,8 @@ router.post("/register", function(req, res) {
   });
 });
 
-router.post("/authenticate", function(req, res) {
+// POST route to authenticate a user logging in
+router.post("/api/authenticate", function(req, res) {
   const { email, password } = req.body;
   User.findOne({ email }, function(err, user) {
     if (err) {
@@ -59,8 +60,14 @@ router.post("/authenticate", function(req, res) {
   });
 });
 
-router.get("/checkToken", withAuth, function(req, res) {
+// GET information whether token has been issued
+router.get("/api/checkToken", withAuth, function(req, res) {
   res.sendStatus(200);
+});
+
+// GET message to be displayed in Home component
+router.get("/api/home", function(req, res) {
+  res.send("Welcome!");
 });
 
 module.exports = router;
