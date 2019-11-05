@@ -35,28 +35,5 @@
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.11.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.+(js|jsx)": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.+(json|css|md)": [
-      "prettier --write",
-      "git add"
-    ],
-    "../**/*.+(js|jsx)": [
-      "eslint --fix",
-      "git add"
-    ],
-    "../**/*.+(json|css|md)": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "proxy": "http://localhost:5000/"
 }
