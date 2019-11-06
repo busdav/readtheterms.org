@@ -10,6 +10,8 @@ const userRouter = require("./src/routes/users");
 
 const app = express();
 
+let test;
+
 // Miscellaneous
 app.use(logger("dev"));
 app.use(express.json());

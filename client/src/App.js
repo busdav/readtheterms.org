@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Router from "./Router";
 
+let test;
+
 class App extends Component {
   render() {
     return (
