@@ -15,8 +15,8 @@
     "test": "jest",
     "lint": "yarn eslint app.js bin/www src/ client/src/",
     "lint:fix": "yarn eslint app.js bin/www src/ client/src/ --fix",
-    "format": "cd client && yarn prettier './**/*.+(json|css|md)' '../src/**/*.+(json|css|md)' '../public/**/*.+(json|css|md)' '../*.+(json|css|md)' -c",
-    "format:fix": "cd client && yarn prettier './**/*.+(json|css|md)' '../src/**/*.+(json|css|md)' '../public/**/*.+(json|css|md)' '../*.+(json|css|md)' --write",
+    "format": "yarn prettier '**/*.+(json|html|css|md)' --check",
+    "format:fix": "yarn prettier '**/*.+(json|html|css|md)' --write",
     "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "dependencies": {
