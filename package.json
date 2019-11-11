@@ -12,12 +12,57 @@
     "client": "cd client && yarn start",
     "server": "nodemon ./bin/www",
     "dev": "concurrently --kill-others-on-fail 'yarn server' 'yarn client'",
-    "test": "jest",
-    "lint": "yarn eslint app.js bin/www src/ client/src/",
-    "lint:fix": "yarn eslint app.js bin/www src/ client/src/ --fix",
-    "format": "yarn prettier '**/*.+(json|html|css|md)' --check",
-    "format:fix": "yarn prettier '**/*.+(json|html|css|md)' --write",
+    "test:backend": "jest --coverage",
+    "test:backend:watch": "jest --watchAll",
+    "test:client": "cd client && yarn test",
+    "lint": "eslint app.js bin/www src/ client/src/",
+    "lint:fix": "eslint app.js bin/www src/ client/src/ --fix",
+    "format": "prettier '**/*.+(json|html|css|md)' --check",
+    "format:fix": "prettier '**/*.+(json|html|css|md)' --write",
     "heroku-postbuild": "cd client && yarn && yarn run build"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/client/"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/client/**",
+      "!app.js",
+      "!bin"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/coverage/",
+      "/config",
+      "/auth",
+      "/client"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 0,
+        "branches": 0,
+        "functions": 0,
+        "lines": 0
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test:backend"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.+(json|html|css|md)": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
@@ -47,20 +92,5 @@
     "jest": "24.8.0",
     "lint-staged": "^9.4.2",
     "prettier": "^1.18.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.+(js|jsx)": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.+(json|css|md)": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
