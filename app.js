@@ -10,7 +10,7 @@ const userRouter = require("./src/routes/users");
 
 const app = express();
 
-// Miscellaneous
+// Miscellaneous / Middleware
 app.use(logger("dev"));
 app.use(express.json());
 app.use(
@@ -32,7 +32,7 @@ app.use(staticRouter);
 app.use(blogRouter);
 app.use(userRouter);
 
-/* Serve any static files by this Express app - looking in Express app as well as built React app. 
+/* Serve any static files by this Express app - looking in Express app as well as React app build. 
 The one for client cannot be before the routes above for templated views, 
 because will override with index.html from client/build. */
 app.use(express.static(path.join(__dirname, "public")));

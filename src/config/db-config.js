@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 
 module.exports = {
   init() {
-    // Set up default mongoose connection
+    // Set up default mongoose connection. For offline dev, 'mongodb://localhost/testing'
+
     if (process.env.NODE_ENV === "test") {
       const mongoUri = process.env.MONGODB_URI_TEST;
       mongoose.connect(mongoUri, {
